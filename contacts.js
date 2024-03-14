@@ -15,7 +15,6 @@ export async function getContactById(contactId) {
   const contacts = await listContacts();
   return contacts.find((contact) => contact.id === contactId) || null;
 }
-console.log(getContactById);
 
 export async function addContact(name, email, phone) {
   // ...код. Повертає об'єкт доданого контакту (з id).
@@ -31,7 +30,6 @@ export async function addContact(name, email, phone) {
   await writeFile(contactsPath, data);
   return contact;
 }
-console.log(addContact);
 
 export async function removeContact(contactId) {
   // ...код. Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
